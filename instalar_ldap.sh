@@ -51,7 +51,7 @@ make install
 cd ..
 
 # Cria arquivo ldapOU.ldif com o conteudo entre as tags END
-cat > $dir_ldapscripts/ldapOU.ldif <<- END
+cat > /etc/ldap/ldapOU.ldif <<- END
 #Groups
 dn: ou=Groups,dc=bioinfo-ic,dc=ct,dc=utfpr,dc=edu,dc=br
 objectClass: organizationalUnit
@@ -95,7 +95,7 @@ gidstart='GIDSTART="10000"'
 uidstart='UIDSTART="10000"'
 midstart='MIDSTART="20000"'
 iconvchar='ICONVCHAR="ISO-8859-15"'
-
+iconvbin='#ICONVBIN="/usr/bin/iconv"'
 
 # Insercao das mudancas no arquivo
 # O comando sed substitui partes de um arquivo
@@ -117,4 +117,4 @@ sed -i "s#^GIDSTART.*#${gidstart}#" $dir_ldapscripts/ldapscripts.conf
 sed -i "s#^UIDSTART.*#${uidstart}#" $dir_ldapscripts/ldapscripts.conf
 sed -i "s#^MIDSTART.*#${midstart}#" $dir_ldapscripts/ldapscripts.conf
 sed -i "s!^#ICONVCHAR.*!${iconvchar}!" $dir_ldapscripts/ldapscripts.conf
-
+sed -i "s!^ICONVBIN.*!${iconvbin}!" $dir_ldapscripts/ldapscripts.conf
