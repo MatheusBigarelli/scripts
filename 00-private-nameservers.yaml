@@ -1,0 +1,9 @@
+network:
+    version: 2
+    ethernets:
+        eno1:                                    # Private network interface
+            dhcp4: true
+            nameservers:
+                addresses:
+                - 192.168.100.254                # Private IP for ns1
+                search: [ labic.example.com ]    # DNS zone
