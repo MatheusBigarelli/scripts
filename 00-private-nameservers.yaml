@@ -6,4 +6,4 @@ network:
             nameservers:
                 addresses:
                 - 192.168.100.254                # Private IP for ns1
-                search: [ labic.example.com ]    # DNS zone
+                search: [ labic.utfpr.edu.br ]    # DNS zone
