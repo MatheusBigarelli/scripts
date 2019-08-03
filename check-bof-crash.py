@@ -9,12 +9,13 @@ verbose = 0
 
 
 usage = """
-Usage: python check-crash [OPTIONS]\n
+Usage: python check-crash [OPTIONS]
+
 Available options:
     -h  --host       ip address
     -p  --port       host port
     -v  --verbose    print extra data in screen
-\n
+
 """
 
 
